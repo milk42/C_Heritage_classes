@@ -1,1 +1,6 @@
 M:\Visual Studio 2015\Exo_Souleimane\HeritageClasses\HeritageClasses\bin\Debug\HeritageClasses.exe.config
+M:\Visual Studio 2015\Exo_Souleimane\HeritageClasses\HeritageClasses\bin\Debug\HeritageClasses.exe
+M:\Visual Studio 2015\Exo_Souleimane\HeritageClasses\HeritageClasses\bin\Debug\HeritageClasses.pdb
+M:\Visual Studio 2015\Exo_Souleimane\HeritageClasses\HeritageClasses\obj\Debug\HeritageClasses.csprojResolveAssemblyReference.cache
+M:\Visual Studio 2015\Exo_Souleimane\HeritageClasses\HeritageClasses\obj\Debug\HeritageClasses.exe
+M:\Visual Studio 2015\Exo_Souleimane\HeritageClasses\HeritageClasses\obj\Debug\HeritageClasses.pdb
