@@ -38,12 +38,12 @@ namespace HeritageClasses
         public void CalculInteret()
         {
             // pas besoin d'appeler la méthode Déposer avec Compte.Deposer
-            Deposer((Solde * this.tauxInteret) / 100);
+            Deposer((Montant * this.tauxInteret) / 100);
         }
 
         public override string ToString()
         {
-            return base.ToString() + " et son taux d'interêt est de : " + this.tauxInteret + " [Compte Epargne] ";
+            return base.ToString() + " car son taux d'interêt est de : " + this.tauxInteret + " [Compte Epargne] ";
         }
     }
 }

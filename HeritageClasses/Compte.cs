@@ -10,14 +10,14 @@ namespace HeritageClasses
     {
         // attributs dont la valeur ne peut pas changer
         // solde et code => accèssible en lecture seule ?
-        private double solde = 0;
+        private double montant;
         private int code;
         private static int comptes;
         // private double montant;
 
         // Je vais pouvoir modifier la valeur depuis ces propriétés
         // pas besoin de SET car on veut juste récupérer la valeur
-        public double Solde { get { return this.solde; }}
+        public double Montant { get { return this.montant; }}
 
         public int Code { get { return this.code; }}
 
@@ -36,7 +36,7 @@ namespace HeritageClasses
         {
             comptes++;
             this.code = comptes;
-            this.solde = solde;
+            this.montant = solde;
         }
 
         // méthodes de base
@@ -44,17 +44,18 @@ namespace HeritageClasses
         public virtual void Deposer(double solde)
         {
             // Console.WriteLine("Je dépose sur mon compte");
-            this.solde += solde;
+            this.montant += solde;
         }
         public virtual void Retirer(double solde)
         {
             // Console.WriteLine("Je retire sur mon compte");
-            this.solde -= solde;
+            this.montant -= solde;
         }
 
         public override string ToString()
         {
-            return "Le solde actuel du compte n° " + this.code + " est de : " + this.solde;
+            // return "Le solde actuel du compte n° " + this.code + " est de : " + this.solde;
+            return "Le solde actuel du compte n° " + this.code + " est de : " + this.montant;
         }
     }
 }
