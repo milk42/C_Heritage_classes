@@ -11,16 +11,17 @@ namespace HeritageClasses
         // attributs dont la valeur ne peut pas changer
         // solde et code => accèssible en lecture seule ?
         private double solde = 0;
-        private int code = 1234;
-        private static int comptes = 0;
+        private int code;
+        private static int comptes;
         // private double montant;
 
         // Je vais pouvoir modifier la valeur depuis ces propriétés
-        public double Solde { get { return this.solde; } set { solde = value; } }
+        // pas besoin de SET car on veut juste récupérer la valeur
+        public double Solde { get { return this.solde; }}
 
-        public int Code { get { return this.code; } set { code = value; } }
+        public int Code { get { return this.code; }}
 
-        public static int Comptes { get { return comptes; } set { comptes = value; } }
+        public static int Comptes { get { return comptes; }}
 
 
 
