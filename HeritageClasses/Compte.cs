@@ -12,35 +12,48 @@ namespace HeritageClasses
         // solde et code => accèssible en lecture seule ?
         private double solde = 0;
         private int code = 1234;
-        private double montant;
+        private static int comptes = 0;
+        // private double montant;
 
         // Je vais pouvoir modifier la valeur depuis ces propriétés
         public double Solde { get { return this.solde; } set { solde = value; } }
 
         public int Code { get { return this.code; } set { code = value; } }
 
-        // Constructeur de base
+        public static int Comptes { get { return comptes; } set { comptes = value; } }
+
+
+
+        // Constructeurs de base
+        public Compte()
+        {
+            comptes++;
+            this.code = comptes;
+        }
+
         public Compte(double solde)
         {
-            this.code += 1;
+            comptes++;
+            this.code = comptes;
             this.solde = solde;
         }
 
         // méthodes de base
-        public virtual void Deposer(double solde, double  montant)
+        // Virtual donne le droite de redéfinir la méthode dans sa classe fille
+        public virtual void Deposer(double solde)
         {
             // Console.WriteLine("Je dépose sur mon compte");
-            this.montant += solde;
+            this.solde += solde;
         }
-        public virtual void Retirer(double solde, double montant)
+        public virtual void Retirer(double solde)
         {
             // Console.WriteLine("Je retire sur mon compte");
-            this.montant -= solde;
+            this.solde -= solde;
         }
 
         public override string ToString()
         {
-            return "Le solde actuel de mon compte est de : " + this.solde;
+            return "Le solde actuel du compte n° " + this.code + " est de : " + this.solde;
         }
     }
 }

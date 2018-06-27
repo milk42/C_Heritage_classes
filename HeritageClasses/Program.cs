@@ -13,29 +13,40 @@ namespace HeritageClasses
             List<Compte> comptes = new List<Compte>();
 
             // Créer une instance de chaque type de compte
-            Compte compteBase = new Compte(10000);
-            CompteEpargne compteEpargne = new CompteEpargne(5000, 1.5);
-            ComptePayant comptePayant = new ComptePayant(-300);
+            Compte compteBase = new Compte();
+            CompteEpargne compteEpargne = new CompteEpargne();
+            ComptePayant comptePayant = new ComptePayant();
 
             comptes.Add(compteBase);
             comptes.Add(compteEpargne);
             comptes.Add(comptePayant);
 
-            //double depot = compteBase.Deposer();
+            // Faire appel à la méthode Deposer() de chaque instance pour déposer une somme quelconque dans ces comptes 
+            compteBase.Deposer(300);
+            compteEpargne.Deposer(1525);
+            comptePayant.Deposer(450);
+
+            // Faire appel à la méthode Retirer() de chaque instance pour retirer une somme quelquonque
+            compteBase.Retirer(20);
+            compteEpargne.Retirer(30);
+            comptePayant.Retirer(50);
+
+            // Faire appel à la méthode CalculInteret()
+            compteEpargne.CalculInteret();
 
             // affiche le solde des 3 comptes
             foreach (var c in comptes)
             {
-                c.ToString();
+                Console.WriteLine(c.ToString());
             }
 
-            Console.WriteLine(compteBase.Code);
-            Console.WriteLine(compteEpargne.Code);
+            Console.WriteLine("-----------------------------------------------------------------------------------");
+
+            Console.WriteLine(compteBase);
+            Console.WriteLine(compteEpargne);
+            Console.WriteLine(comptePayant);
             Console.ReadLine();
 
-            // Faire appel à la méthode CalculInteret()
-            // Faire appel à la méthode Retirer() de chaque instance pour retirer une somme quelquonque
-            // Faire appel à la méthode Deposer() de chaque instance pour déposer une somme quelconque dans ces comptes 
         }
     }
 }

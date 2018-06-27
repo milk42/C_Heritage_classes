@@ -16,25 +16,34 @@ namespace HeritageClasses
             get { return this.tauxInteret; }
         }
 
-        public CompteEpargne(double solde, double tauxInteret) : base(solde)
+        public CompteEpargne() : base()
         {
-            this.tauxInteret = tauxInteret;
         }
 
-        public override void Deposer(double solde, double montant)
+        public CompteEpargne(double solde) : base(solde)
         {
-            base.Deposer(solde, montant);
+        }
+
+        public override void Deposer(double solde)
+        {
+            base.Deposer(solde);
  
         }
-        public override void Retirer(double solde, double montant)
+        public override void Retirer(double solde)
         {
-            base.Retirer(solde, montant);
+            base.Retirer(solde);
         }
 
         // Met à jour le solde en prenant en compte les intérêts
-        //public double calculInteret()
-        //{
-        //    return (tauxInteret * 100) / solde; 
-        //}
+        public void CalculInteret()
+        {
+            // pas besoin d'appeler la méthode Déposer avec Compte.Deposer
+            Deposer((Solde * this.tauxInteret) / 100);
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + " et son taux d'interêt est de : " + this.tauxInteret + " [Compte Epargne] ";
+        }
     }
 }
